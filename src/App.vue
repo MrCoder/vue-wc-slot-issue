@@ -10,7 +10,13 @@ export default {
   name: 'app',
   mounted() {
     window.App = this;
-    console.log(this.$slots);
+    console.log(window.App.$slots.default && window.App.$slots.default[0].text);
+    this.$nextTick(() => {
+      console.log(window.App.$slots.default && window.App.$slots.default[0].text)
+    });
+    setTimeout(() => {
+      console.log(window.App.$slots.default && window.App.$slots.default[0].text)      
+    });
   }
 }
 </script>

@@ -1,32 +1,18 @@
 # vue-wc-slot-issue
+
 A sample project to demo the $slots access issue in web component target.
-=======
-# slot
 
-## Project setup
-```
+## Steps to reproduce
+
+```bash
 yarn install
+./node_modules/.bin/vue-cli-service build --target wc --name hello-slot && cp src/demo.html dist/
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+### Expected behaviour
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+It should prints `1234` (the slot content) 3 times.
 
-### Run your tests
-```
-yarn run test
-```
+### Actual behaviour
 
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`1234` is printed only once (the third log).
